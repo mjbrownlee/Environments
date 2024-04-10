@@ -13,10 +13,10 @@ jobs:
     environment: Live
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ vars.ENV_VAL }}"
+      - run: echo "${{ vars.ENV_VAL }}" >> $GITHUB_STEP_SUMMARY
 
   dev-job:
     environment: Dev
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ vars.ENV_VAL }}"
+      - run: echo "${{ vars.ENV_VAL }}" >> $GITHUB_STEP_SUMMARY
