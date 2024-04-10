@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - ci/*
+
+name: Environment test
+
+jobs:
+  live-job:
+    environment: Live
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ vars.ENV_VAL }}"
+
+  dev-job:
+    environment: Dev
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ vars.ENV_VAL }}"
